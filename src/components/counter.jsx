@@ -13,9 +13,13 @@ const Counter = (props) => {
     return classes
   }
 
-  const handleIncrement = () => {}
+  const handleIncrement = () => {
+    props.onIncrement(props.id)
+  }
 
-  const handleDecrement = () => {}
+  const handleDecrement = () => {
+    props.onDecrement(props.id)
+  }
 
   return (
     <div>
