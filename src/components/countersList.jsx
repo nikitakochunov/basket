@@ -21,22 +21,16 @@ const CountersList = () => {
   }
 
   const handleIncrement = (id) => {
-    const newCounters = counters.map((c) => {
-      if (c.id === id) {
-        c.value += 1
-      }
-      return c
-    })
+    const elementIndex = counters.findIndex((c) => c.id === id)
+    const newCounters = [...counters]
+    newCounters[elementIndex].value++
     setCounters(newCounters)
   }
 
   const handleDecrement = (id) => {
-    const newCounters = counters.map((c) => {
-      if (c.id === id) {
-        c.value -= 1
-      }
-      return c
-    })
+    const elementIndex = counters.findIndex((c) => c.id === id)
+    const newCounters = [...counters]
+    newCounters[elementIndex].value--
     setCounters(newCounters)
   }
 
